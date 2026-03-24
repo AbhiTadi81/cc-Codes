@@ -110,6 +110,7 @@ if __name__ == "__main__":
         Process(target=client, args=(i, req_q, res_q)).start()
 ___________________________________________________________________________
 ---------------------------------------------------------------------------
+6. Publish/Subscribe Simulation (Threading)
 import threading, queue
 
 class Broker:
@@ -142,6 +143,7 @@ threading.Thread(target=subscriber, args=("A", broker, "news")).start()
 threading.Thread(target=publisher, args=(broker, "news")).start()
 --------------------------------------------------------------------
 ------------------------------------------------------------------------
+7.RabbitMQ (Distributed IPC Pub/Sub)
 PIP INSTALL PIKA
 import pika
 
@@ -176,6 +178,8 @@ conn.close()
 
 -----------------------------------------------------------------
 ------------------------------------------------------------------
+8. ZeroMQ (ØMQ Pub/Sub)
+Subscriber
 pip install pyzmq
 import zmq
 
@@ -190,7 +194,7 @@ while True:
     print("Received:", msg)
     
     
-    
+    Publisher
 import zmq, time
 
 context = zmq.Context()
